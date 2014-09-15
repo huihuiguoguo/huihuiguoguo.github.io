@@ -21,6 +21,10 @@ It is useful for learning the basic concepts of the system.
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Pragma" content="no-cache" />    
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <!--
 While this receiver doesn't have any text, it's important to know that
 Chromecast defaults to a black background with black text.  Changing that will
@@ -30,7 +34,7 @@ We find that having everything fit in the HTML boxes tends to look nicer on TV
 so, we also set overflow: hidden, which clips all flowing outside of boxes or
 adding of scrollbars, which aren't useful on TV.
 -->
-<style type="text/css">
+<!--style type="text/css">
   @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
   body {
     font-family: "Droid Serif", serif;
@@ -48,29 +52,44 @@ adding of scrollbars, which aren't useful on TV.
     margin: auto auto;
     overflow: hidden !important;
   }
-</style>
+</style-->
 <!--
 Include the Receiver Library - Very important use our URL, don't attempt to
 host this yourself.
 -->
+
 <script type="text/javascript" 
     src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js">
 </script>
-    <title>Cast Simple Receiver</title>
+    <title>Camera Monitor on TV Receiver</title>
   </head>
-  <body>
-    <video id='vid' />
+  <body bgcolor="black">
+	<center>
+    <div>
+	<h1>
+		<font color="white">
+		Marvell Camera Demo
+		</font>
+	</h1>
+    <img src="http://192.168.65.1:8080/?action=stream">
+    </div>
+	</center>
+
 <script type="text/javascript">
-  window.onload = function() {
+	window.onload = function() {
 // Turn on debugging so that you can see what is going on.  Please turn this off
 // on your production receivers.  Especially if there may be any personally
 // identifiable information in the log.
     cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
 
     console.log('Starting media application');
-    window.mediaElement = document.getElementById('vid');
+
+//Display Karaoke Lyrics
+    //displayKaraokeLyrics();
+
+    //window.mediaElement = document.getElementById('vid');
 // Create the media manager. This will handle all media messages by default.
-    window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
+    //window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
 
 // Start the system
     console.log('Application is ready, starting system');
