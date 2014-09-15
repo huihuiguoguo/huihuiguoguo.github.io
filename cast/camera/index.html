@@ -60,11 +60,12 @@ host this yourself.
   </head>
   <body>
     <div style="position:absolute;left:0px;top:0px;z-index:0;">
-    <video id='vid' />
+    <!--video id='vid' />
 	</div>
 	<div style="position:absolute;left:0px;top:0px;z-index:2;">
 	<img src="http://192.168.65.1:8080/?action=stream">
-	</div>
+	</div-->
+	<img src="http://192.168.65.1:8080/?action=stream">
 <script type="text/javascript">
   window.onload = function() {
 // Turn on debugging so that you can see what is going on.  Please turn this off
@@ -73,9 +74,9 @@ host this yourself.
     cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
 
     console.log('Starting media application');
-    window.mediaElement = document.getElementById('vid');
+    //window.mediaElement = document.getElementById('vid');
 // Create the media manager. This will handle all media messages by default.
-    window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
+    //window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
 
 // Start the system
     console.log('Application is ready, starting system');
